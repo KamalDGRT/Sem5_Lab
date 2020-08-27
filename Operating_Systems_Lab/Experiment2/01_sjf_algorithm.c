@@ -16,6 +16,15 @@ int main() {
         scanf("%d", &bt[i]);
     }
 
+    // Sorting the Burst Time in Ascending Order using Bubble Sort
+    for(i = 0; i < (nop - 1); i++)
+        for(j = 0; j < (nop - i - 1); j++)
+            if(bt[j+1] >= bt[j]){
+                t = bt[j];
+                bt[j] = bt[j+1];
+                bt[j+1] = t;
+            }
+
     wt[0] = 0;
     tat[0] = bt[0];
     twt = wt[0];
@@ -30,6 +39,7 @@ int main() {
 
     awt = (float)twt/nop;
     atat = (float)ttat/nop;
+
     printf("\n ProcessID\tBurstTime\tWaitingTime\tTurnaroundTime\n");
     for(i = 0; i < nop; i++) {
         printf("%d\t\t%d\t\t%d\t\t%d\n", i, bt[i], wt[i], tat[i]);
