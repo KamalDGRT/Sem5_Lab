@@ -1,0 +1,9 @@
+1.  Start.
+2.  Check if it is a reader/writer job. If reader, perform step 3, else if its a writer, perform step 4.
+3.  If reader wants to read, check if there's a wrting process.
+        If so, read the file.
+        else, not allowed to read.
+    If the reader wants to close the file, close it.
+    Go to step 2.
+4. If a read operation 
+    
