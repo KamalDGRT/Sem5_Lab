@@ -1,0 +1,24 @@
+<html>
+
+<body>
+    <h1 align="center" font-color="red"><u>Simple Login Page</u></h1>
+    <form name="login">
+        <center>
+            Username : <input type="text" name="userid"><br><br>
+            Password : <input type="password" name="pswrd"><br><br><br><br>
+            <input type="button" onclick="check(this.form)" value="Login">
+            <input type="reset" value="Cancel">
+        </center>
+    </form>
+    <script language="javascript">
+        function check(form) {
+            if (form.userid.value == "hema" && form.pswrd.value == "hema") {
+                window.open("paymentbycreditcard.html");
+            } else {
+                alert("Error Password or Username");
+            }
+        }
+    </script>
+</body>
+
+</html>
