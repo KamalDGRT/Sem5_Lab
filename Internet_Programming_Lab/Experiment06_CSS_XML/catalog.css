@@ -1,0 +1,34 @@
+company{
+    background-color: snow;
+    width:100%;
+}
+
+IT {
+    display: block;
+    margin-bottom: 30pt;
+    margin-left: 30pt;
+}
+
+name {
+    color: greenyellow;
+    margin-left: 20pt;
+    font-size: 18pt;
+}
+
+location {
+    color: magenta;
+    margin-left: 20pt;
+    font-size: 18pt;
+}
+
+state {
+    color: brown;
+    margin-left: 20pt;
+    font-size: 18pt;
+}
+
+mech {
+    color: slateblue;
+    margin-right: 20pt;
+    font-size: 18pt;
+}
