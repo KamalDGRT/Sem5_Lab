@@ -9,6 +9,9 @@ int main() {
     printf("Enter the no. of processes : ");
     scanf("%d", &p);
 
+    for(i = 0; i < p; i++)
+        completed[i] = 0;
+
     printf("Enter the no. of resources : ");
     scanf("%d", &r);
 
@@ -33,24 +36,26 @@ int main() {
     for(i = 0; i < r; i++)
         scanf("%d", &avail[i]);
 
-    for(i = 0; i < p i++)
+    for(i = 0; i < p; i++)
         for(j = 0; j < r; j++)
             need[i][j] = Max[i][j] - alloc[i][j];
 
-    do {
-        printf("\n Max Matrix:\tAllocation Matrix:\n");
+printf("\n Max Matrix:\tAllocation Matrix:\n");
         for(i = 0; i < p; i++) {
             for(j = 0; j < r; j++)
-                printf("%d", &Max[i][j]);
+                printf("%d  ", Max[i][j]);
 
             printf("\t\t");
 
             for(j = 0; j < r; j++)
-                printf("%d", &alloc[i][j]);
+                printf("%d ", alloc[i][j]);
 
             printf("\n");
         }
 
+
+    do {
+        
         process = -1;
         
         for(i = 0; i < p; i++) {
@@ -81,6 +86,7 @@ int main() {
                 completed[process] = 1;
             }
         }
+
     } while(count != p && process != -1);
 
     if(count == p) {
