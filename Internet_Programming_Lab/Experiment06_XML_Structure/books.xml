@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<BOOKS>
+<BOOK>
+
+<TITLE>java</TITLE>
+<AUTHOR>pattrick</AUTHOR>
+<PUBLISHER>tata mcgraw hill</PUBLISHER>
+<PRICE>530</PRICE>
+</BOOK>
+
+<BOOK>
+<TITLE>asp</TITLE>
+<AUTHOR>micheal</AUTHOR>
+<PUBLISHER>tech media</PUBLISHER>
+<PRICE>450</PRICE>
+</BOOK>
+
+<BOOK>
+<TITLE>Lost Symbol</TITLE>
+<AUTHOR>Dan Brown</AUTHOR>
+<PUBLISHER>Book Worms</PUBLISHER>
+<PRICE>380</PRICE>
+</BOOK>
+
+<BOOK>
+<TITLE>XML Complete Reference</TITLE>
+<AUTHOR>Heather Williamson</AUTHOR>
+<PUBLISHER>tata mcgraw hill</PUBLISHER>
+<PRICE>560</PRICE>
+</BOOK>
+
+<BOOK>
+<TITLE>The Complete Reference HTML</TITLE>
+<AUTHOR>Thomas A. Powell</AUTHOR>
+<PUBLISHER>Tata McGraw Hill</PUBLISHER>
+<PRICE>450</PRICE>
+</BOOK>
+
+<BOOK>
+<TITLE>Java Script Complete Reference</TITLE>
+<AUTHOR>Thomas A. Powell</AUTHOR>
+<PUBLISHER>Tata McGraw Hills</PUBLISHER>
+<PRICE>390</PRICE>
+</BOOK>
+
+<BOOK>
+<TITLE>ASP . Net 4 unleashed</TITLE>
+<AUTHOR>Stephen Walther</AUTHOR>
+<PUBLISHER>Pearson Education</PUBLISHER>
+<PRICE>1530</PRICE>
+</BOOK>
+
+<BOOK>
+<TITLE>Internet and world wide web</TITLE>
+<AUTHOR>Deitel</AUTHOR>
+<PUBLISHER>Prentice Hall</PUBLISHER>
+<PRICE>1000</PRICE>
+</BOOK>
+
+<BOOK>
+<TITLE>Computer Graphics</TITLE>
+<AUTHOR>Donald Hearn</AUTHOR>
+<PUBLISHER>Tata McGraw Hill</PUBLISHER>
+<PRICE>450</PRICE>
+</BOOK>
+
+<BOOK>
+<TITLE>Multimedia</TITLE>
+<AUTHOR>Tay Vaughan</AUTHOR>
+<PUBLISHER>Tata McGraw Hills</PUBLISHER>
+<PRICE>300</PRICE>
+</BOOK>
+
+</BOOKS>
