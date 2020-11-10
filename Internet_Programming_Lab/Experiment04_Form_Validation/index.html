@@ -1,0 +1,191 @@
+<html>
+
+<head>
+    <title> Student Details Form</title>
+    <style> 
+        body{
+            background-color:pink;
+        }
+
+        div { 
+            box-sizing: border-box; 
+            width: 100%; 
+            border: 10px solid black; 
+            float: left; 
+            align-content: center; 
+            align-items: center; 
+            font-size: larger;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        } 
+        
+        form { 
+            margin: 0 auto; 
+            width: 600px; 
+        }
+
+        input, select, option{
+            height: 40px;
+            width: 100%;
+            font-size: larger;
+            background-color: antiquewhite;
+        }
+    </style>     
+</head>
+
+<body>
+    <script>
+        function validate() {
+            var nameerr, regerr, doberr, generr, depterr, blgerr, emailerr, phnoerr;
+            var alertMessage = "";
+
+            var name = document.student_details.name.value;
+            if (name == "" || name == "null") {
+                 alertMessage += "\nEnter a valid name.";
+                // alert("enter your name"); 
+                nameerr = true;
+            } else nameerr = false;
+
+            var regno = document.student_details.regno.value;
+            var no = /[0-9]{10}/;
+            let creg = no.test(regno);
+            if (creg)
+                regerr = false;
+            else {
+                alertMessage += "\nEnter a valid 10 digit register number.";
+                // alert("enter a valid 10 digit register number");
+                regerr = true;
+            }
+
+            var dob = document.student_details.dob.value;
+            if (dob == "") {
+                // alert("select your date of birth");
+                alertMessage += "\nSelect your date of birth";
+                doberr = true;
+            }
+            else
+                doberr = false;
+
+            var male = document.student_details.gender[0].checked;
+            var female = document.student_details.gender[1].checked;
+            if (male == false && female == false) {
+                // alert("select your gender");
+                alertMessage += "\nSelect your Gender.";
+                generr = true;
+            }
+            else
+                generr = false;
+
+            var dept = document.student_details.department.value;
+            if (dept == "select") {
+                // alert("select your department");
+                alertMessage += "\nSelect your Department.";
+                generr = true;
+            }
+            else
+                generr = false;
+
+            var mailid = document.student_details.email.value;
+            var mail = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+            let cmail = mail.test(mailid);
+
+            if (cmail)
+                emailerr = false;
+            else {
+                // alert("enter a valid email id");
+                alertMessage += "\nEnter you Mail ID.";
+                emailerr = true;
+            }
+
+            var bldgrp = document.student_details.bldgrp.value;
+            var bloodgroup = /^(A|B|AB|O|a|b|ab|0)[+-]$/;
+            let cbldgrp = bloodgroup.test(bldgrp);
+            if (cbldgrp)
+                blgerr = false;
+            else {
+                // alert("enter blood group of the format A+");
+                alertMessage += "\nEnter a valid blood group.";
+                blgerr = true;
+            }
+
+            var phnum = document.student_details.phno.value;
+            let cphno = no.test(phnum);
+            if (cphno)
+                phnoerr = false;
+            else {
+                // alert("enter a valid 10 digit phone number");
+                alertMessage += "\nEnter valid phone number.";
+                phnoerr = true;
+            }
+
+            if (nameerr || regerr || doberr || generr || depterr || blgerr || emailerr || phnoerr == true){
+                alert(alertMessage);
+                return (false);
+            }
+            else return (true)
+        } 
+    </script>
+    <h1 style="text-align: center;"> Form Validation </h1>
+
+    <form name="student_details" method="post" onsubmit="return validate()">
+        <!-- name field validation checks if a name has been entered or not-->
+
+        <div>
+            NAME: <input type="text" name="name"><br>
+        </div>
+        
+
+        <!-- Register number field validation checks if a number is entered and also if it is a 10 digit number or not -->
+        <div>
+            REGISTER NUMBER: <input type="text" name="regno"><br>
+        </div>
+
+        <!-- Date of birth field validation checks if a date has been choosen or not -->
+
+        <div>
+            DATE OF BIRTH: <input type="date" name="dob"><br>
+        </div>
+
+        <!-- Gender field validation checks if a gender has been selected or not -->
+        <div>
+            GENDER: 
+            <input type="radio" name="gender" value="male">Male<br>
+            <input type="radio" name="gender" value="female">Female<br>
+    
+        </div>
+        
+        <!-- Department field validation checks if a department has been selected or not -->
+        <div>
+            DEPARTMENT:
+            <select name="department"><br>
+                <option value="select"> select-- </option>
+                <option value="ECE"> ECE </option>
+                <option value="CSE"> CSE </option>
+                <option value="IT"> IT </option>
+            </select>
+        </div>
+        <br>
+
+        <!-- Blood group field validation checks if a valid bloodgroup of format A+ or AB- has been entered or not -->
+        <div>
+            BLOOD GROUP: <input type="text" name="bldgrp"><br>
+        </div>
+        
+
+        <!-- Email id field validation checks if a valid email id of format abc@gmail.com or 2018@student.univ.edu has been entered or not -->
+        <div>
+            EMAIL ID:<input type="text" name="email"><br>
+        </div>
+
+        <!-- Phone number field validation checks if a number is entered and also if it is a 10 digit number or not -->
+        <div>
+            PHONE NUMBER: <input type="text" name="phno"><br>
+        </div>
+
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+
+</body>
+
+</html>
