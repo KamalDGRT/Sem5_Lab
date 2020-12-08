@@ -27,18 +27,18 @@ int main() {
                     r += 1;
                     printf("Reader %d reads\n", r);
                 } else {
-                    printf("\nNot possible");
+                    printf("Not possible\n");
                 }
             break;
 
             case 2: 
                 if(sread == 0 && swrite == 0) {
                     swrite = 1;
-                    printf("Writer in progress");
+                    printf("Writer in progress\n");
                 } else if (swrite == 1) {
-                    printf("Writer writes the files");
+                    printf("Writer writes the files\n");
                 } else if (sread == 1) {
-                    printf("Cannot write while reader reads the file");
+                    printf("Cannot write while reader reads the file\n");
                 }
                 break;
 
@@ -50,17 +50,17 @@ int main() {
                         sread = 0;
                     } 
                 } else if (r == 0) {
-                    printf("Currently no readers access the file.");
+                    printf("Currently no readers access the file\n");
                     sread = 0;
                 }
             break;
 
             case 4: 
                 if(swrite == 1) {
-                    printf("Writer closes the file.");
+                    printf("Writer closes the file\n");
                     swrite = 0;
                 } else {
-                    printf("There is no writer in the file.");
+                    printf("There is no writer in the file\n");
                 }
             break;
 
