@@ -1,46 +1,43 @@
 #include <stdio.h>
 
-#define max 25
-
 int main()
 {
-    int frag[max], b[max], f[max], i, j, nb, nf, temp, highest = 0;
-    static int bf[max], ff[max];
-
+    int f[10], b[10], p[10], m, n, nb, np, t, d = 0;
+    static int ba[10], pa[10];
+    
     scanf("%d", &nb);
-
-    scanf("%d", &nf);
-
-    for (i = 1; i <= nb; i++)
-        scanf("%d", &b[i]);
-
-    for (i = 1; i <= nf; i++)
-        scanf("%d", &f[i]);
-
-    for (i = 1; i <= nf; i++)
+    scanf("%d", &np);
+    
+    for(m = 1; m <= nb; m++)
+        scanf("%d", &b[m]);
+        
+    for(n = 1; n <= np; n++)
+        scanf("%d", &p[n]);
+    
+    for(m = 1; m <= np; m++)
     {
-        for (j = 1; j <= nb; j++)
+        for(n = 1; n <= np; n++)
         {
-            if (bf[j] != 1)
+            if(ba[n] != 1)
             {
-                temp = b[j] - f[i];
-                if (temp >= 0)
-                    if (highest < temp)
+                t = b[n] - p[m];
+                if(t >= 0)
+                    if(d < t)
                     {
-                        ff[i] = j;
-                        highest = temp;
+                        pa[m] = n;
+                        d = t;
                     }
             }
         }
-        frag[i] = highest;
-        bf[ff[i]] = 1;
-        highest = 0;
+        f[m] = d;
+        ba[pa[m]] = 1;
+        d = 0;
     }
-
-    printf("Process_no:\tProcess_size :\tBlock_no:\tBlock_size:\tFragement");
-
-    for (i = 1; i <= nf; i++)
-        printf("\n%d\t\t%d\t\t%d\t\t%d\t\t%d", i, f[i], ff[i], b[ff[i]], frag[i]);
-
+    
+    printf("Process_no:\tProcess_size :\tBlock_no:\tBlock_size:\tFragment");
+    
+    for(m = 1; m <= np; m++)
+        printf("\n%d\t\t%d\t\t%d\t\t%d\t\t%d", m, p[m], pa[m], b[pa[m]], f[m]);
+    
     return 0;
 }
