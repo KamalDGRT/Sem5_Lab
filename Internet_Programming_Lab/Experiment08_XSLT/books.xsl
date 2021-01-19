@@ -1,29 +1,29 @@
 <?xml version="1.0"?>
-
-<xsl:stylesheet version = "1.0"
-   xmlns:xsl = "http://www.w3.org/1999/XSL/Transform">
-
+<xsl:stylesheet xmlns:xsl=" " http://www.w3.org/1999/XSL/Transform " ">
 <xsl:template match="/">
-<html>
-<body>
-<table  style="border:1 px solid black">
-<caption> BOOKS DETAILS </caption>
-<tr>
-<th> TITLE </th>
-<th> AUTHOR </th>
-<th> PUBLISHER </th>
-<th> PRICE </th>
-</tr>
+<HTML>
+<BODY>
+<TABLE
+BORDER="10"
+BGCOLOR="orange"
+align="center">
+<CAPTION>BOOKS DETAILS</CAPTION>
+<TR>
+<TH>TITLE</TH>
+<TH>AUTHOR</TH>
+<TH>PUBLISHER</TH>
+<TH>PRICE</TH>
+</TR>
 <xsl:for-each select="BOOKS/BOOK">
-<tr>
-<td><xsl:value-of select="TITLE"/></td>
-<td><xsl:value-of select="AUTHOR"/></td>
-<td><xsl:value-of select="PUBLISHER"/></td>
-<td><xsl:value-of select="PRICE"/></td>
-</tr>
+<TR>
+<TD><xsl:value-of select ="TITLE"/></TD>
+<TD><xsl:value-of select ="AUTHOR"/></TD>
+<TD><xsl:value-of select ="PUBLISHER"/></TD>
+<TD><xsl:value-of select ="PRICE"/></TD>
+</TR>
 </xsl:for-each>
-</table>
-</body>
-</html>
+</TABLE>
+</BODY>
+</HTML>
 </xsl:template>
 </xsl:stylesheet>
