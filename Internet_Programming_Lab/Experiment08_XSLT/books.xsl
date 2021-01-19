@@ -14,10 +14,10 @@
     
         <xsl:for-each select="BOOKS/BOOK">
             <TR>
-                <TD><xsl:value-of select ="TITLE"/></TD>
-                <TD><xsl:value-of select ="AUTHOR"/></TD>
-                <TD><xsl:value-of select ="PUBLISHER"/></TD>
-                <TD><xsl:value-of select ="PRICE"/></TD>
+                <TD><xsl:value-of select="TITLE"/></TD>
+                <TD><xsl:value-of select="AUTHOR"/></TD>
+                <TD><xsl:value-of select="PUBLISHER"/></TD>
+                <TD><xsl:value-of select="PRICE"/></TD>
             </TR>
         </xsl:for-each>
     </TABLE>
