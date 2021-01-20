@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <title> DOM Parser </title>
+    <style>
+        body {
+            background-color: aquamarine;
+        }
+
+        div {
+            background-color: black;
+            color: azure;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> XML Parser </h1>
+    <div>
+        <b> From </b><br />
+        <span id="from"></span><br />
+
+        <b> To </b><br />
+        <span id="to"> </span><br />
+
+        <b> Heading </b><br />
+        <span id="head"></span><br />
+
+        <b> Message </b><br />
+        <span id="message"></span><br />
+    </div>
+
+    <script type="text/javascript">
+
+        txt = "<note>";
+        txt = txt + "<from>Annabeth Chase</from>";
+        txt = txt + "<to>Rachel Dare</to>";
+        txt = txt + "<heading>Message from PIT</heading>";
+        txt = txt + "<body>Take the Athena Parthenos to Camp Half Blood!</body>";
+        txt = txt + "</note>";
+
+        if (window.DOMParser) {
+            parser = new DOMParser();
+            xmlDoc = parser.parseFromString(txt, "text/xml");
+        }
+        else {
+            xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+            xmlDoc.async = false;
+            xmlDoc.loadXML(txt);
+        }
+
+        document.getElementById("from").innerHTML = xmlDoc.getElementsByTagName("from")[0].childNodes[0].nodeValue;
+        document.getElementById("to").innerHTML = xmlDoc.getElementsByTagName("to")[0].childNodes[0].nodeValue;
+        document.getElementById("head").innerHTML = xmlDoc.getElementsByTagName("heading")[0].childNodes[0].nodeValue;
+        document.getElementById("message").innerHTML = xmlDoc.getElementsByTagName("body")[0].childNodes[0].nodeValue;
+
+    </script>
+</body>
+
+</html>
